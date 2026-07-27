@@ -1,0 +1,26 @@
+Lightkurve: Exoplanet Transit Detection Workflow
+1) Import Telescope Data
+- from lightkurve import search_targetpixelfile
+pixelfile = search_targetpixelfile("KIC 8462852", quarter=16).download(quality_bitmask='hardest')
+- Import telescope data from Kepler or TESS missions using the target's catalog ID (KIC for Kepler, TIC for TESS). The quarter parameter specifies the observation period of the Kepler mission.
+2) Visualising Target Pixel File
+- Timeframe of the image:
+    pixelfile.plot(frame=x)
+- Animation of the target pixel file over time:
+    pixelfile.animate
+3) Convert from TargetPixelFile to LightCurve File
+- Lightkurve files contain the star's brightness (flux) over time, creating a light curve that can be analysed for periodic variations. 
+- Aperture photometry sums the light from selected pixels around the star to measure its brightness while reducing background noise. 
+- The Kepler pipeline aperture is used by default.
+4) Finding Exoplanet Transit Patterns
+- We need to check the star's brightness over time to find the periodic pattern.
+- Identifying the periodic pattern can help identify exoplanet transits across the star.
+- Use long cadence for finding longer-period variations and exoplanet transits.
+- Long cadence: measurement every 29.4 mins;
+  Short cadence: measurement every 1 min.
+5) Flattening the Light Curve
+- Flatten command removes the long-term trends that are not useful for exoplanet transit detections using a Savitzky–Golay filter.
+6) Periodogram Analysis
+- A periodogram is used to find the strongest repeating pattern in the star's brightness. 
+- This periodic pattern provides information to identify possible planetary transits, where a planet crosses in front of the star and causes a dip in flux over time.
+
