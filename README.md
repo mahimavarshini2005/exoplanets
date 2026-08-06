@@ -9,3 +9,5 @@ TESS stars data: https://archive.stsci.edu/missions-and-data/tess
 
 
 Catalogue of stars from telescopes: https://mast.stsci.edu/portal/Mashup/Clients/Mast/Portal.html
+[Candidate Target List (CTL): 9.5 million stars]
+
