@@ -23,4 +23,8 @@ pixelfile = search_targetpixelfile("KIC 8462852", quarter=16).download(quality_b
 6) Periodogram Analysis
 - A periodogram is used to find the strongest repeating pattern in the star's brightness. 
 - This periodic pattern provides information to identify possible planetary transits, where a planet crosses in front of the star and causes a dip in flux over time.
+7) Command to import TESS data from MAST: 
+- from lightkurve import TessTargetPixelFile
+- remove search command
+- Variable name assigned to TessTargetPixelFile("***")
 
